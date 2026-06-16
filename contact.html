@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact | Sandyhook Homeaides Services LLC</title>
+<meta name="description" content="Contact Sandyhook Homeaides Services LLC for a free home care consultation in Sandy Hook and across Connecticut. Call (203) 768-5008.">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header>
+  <div class="wrap bar">
+    <a class="brand serif" href="index.html">Sandyhook Homeaides<br>Services LLC</a>
+    <nav class="main" id="nav">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="about.html">About</a>
+      <a href="contact.html" class="active">Contact</a>
+    </nav>
+    <a class="book" href="#form">Book now</a>
+    <button class="menu-toggle" onclick="document.getElementById('nav').classList.toggle('open')" aria-label="Menu">☰</button>
+  </div>
+</header>
+
+<section class="pad">
+  <div class="wrap">
+    <div class="eyebrow">Get in touch</div>
+    <h2 class="serif" style="margin-top:14px;max-width:640px">Let's talk about your family's care.</h2>
+    <div class="cgrid">
+      <div class="cinfo">
+        <p class="lead" style="margin-bottom:10px">Reach out for a free consultation and care evaluation. We'll listen, answer your questions, and help you find the right level of support, with no obligation.</p>
+        <div class="row"><div class="k">Phone</div><div class="v"><a href="tel:+12037685008">(203) 768-5008</a> · <a href="tel:+12034560314">(203) 456-0314</a></div></div>
+        <div class="row"><div class="k">Email</div><div class="v"><a href="mailto:sandyhookhealthservicesllc@gmail.com">sandyhookhealthservicesllc@gmail.com</a></div></div>
+        <div class="row"><div class="k">Address</div><div class="v">63 Capitol Dr., Sandy Hook, CT 06482</div></div>
+        <div class="row"><div class="k">Hours</div><div class="v">Care available 24/7, 365 days a year</div></div>
+      </div>
+      <div class="form" id="form">
+        <h3 class="serif" style="font-size:24px;margin-bottom:6px">Request your free consultation</h3>
+        <form id="consultForm" onsubmit="return sendEnquiry(event)">
+          <label>Your name</label><input type="text" id="f_name" required>
+          <label>Phone</label><input type="text" id="f_phone" required>
+          <label>Who needs care?</label><input type="text" id="f_who" placeholder="e.g., my mother, my husband, myself">
+          <label>What support are you looking for?</label>
+          <select id="f_type">
+            <option>Not sure yet</option>
+            <option>Wellness visit</option>
+            <option>Hourly</option>
+            <option>Live-in</option>
+            <option>24-hour</option>
+          </select>
+          <label>Tell us a little about your situation</label>
+          <textarea id="f_msg" rows="4"></textarea>
+          <button type="submit">Request my free consultation</button>
+        </form>
+      </div>
+    </div>
+    <div class="mapwrap">
+      <iframe title="Map to 63 Capitol Dr, Sandy Hook, CT" loading="lazy" src="https://maps.google.com/maps?q=63%20Capitol%20Dr%2C%20Sandy%20Hook%2C%20CT%2006482&output=embed"></iframe>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div><div class="brand serif">Sandyhook Homeaides Services LLC</div>63 Capitol Dr., Sandy Hook, CT 06482<br>HCA #0002370 · Insured &amp; bonded · Care 24/7</div>
+    <div><b>Contact</b><a href="tel:+12037685008">(203) 768-5008</a> / <a href="tel:+12034560314">(203) 456-0314</a><br><a href="mailto:sandyhookhealthservicesllc@gmail.com">sandyhookhealthservicesllc@gmail.com</a></div>
+    <div><b>Pages</b><a href="index.html">Home</a> · <a href="services.html">Services</a> · <a href="pricing.html">Pricing</a><br><a href="about.html">About</a> · <a href="contact.html">Contact</a></div>
+  </div>
+  <div class="legal">© Sandyhook Homeaides Services LLC · Connecticut Homemaker-Companion Agency · HCA #0002370</div>
+</footer>
+
+<script>
+function sendEnquiry(e){
+  e.preventDefault();
+  var name=document.getElementById('f_name').value;
+  var phone=document.getElementById('f_phone').value;
+  var who=document.getElementById('f_who').value;
+  var type=document.getElementById('f_type').value;
+  var msg=document.getElementById('f_msg').value;
+  var subject=encodeURIComponent('Consultation request from '+name);
+  var body=encodeURIComponent(
+    'Name: '+name+'\nPhone: '+phone+'\nWho needs care: '+who+'\nSupport wanted: '+type+'\n\n'+msg
+  );
+  window.location.href='mailto:sandyhookhealthservicesllc@gmail.com?subject='+subject+'&body='+body;
+  return false;
+}
+</script>
+
+</body>
+</html>
